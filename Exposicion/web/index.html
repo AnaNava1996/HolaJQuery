@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--link rel="stylesheet" type="text/css" href="StyleSheet2.css"-->
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            //BLANCO Y NEGRO
+            $("#ByN").click(function () {
+                $("body").css({ "background-image": "url('fondo13.jpg')", "background-attachment": "fixed" });
+                $(document).ready(function () {
+                    $("#plipli").hide();
+                });
+                $("h1").css({ "font-size": "50px", "color": "#ffffff", "font-family": "Verdana, Geneva, sans-serif" });
+                $("#panel").css({
+                    "padding": "40px", "text-align": "center", "background-color": "#000000",
+                    "border": "solid 1px #c3c3c3", "display": "none", "border-radius": "20px"});
+                $(document).ready(function () {
+                    $("#panel").slideToggle(1000);
+                });
+                $(document).ready(function () {
+                    $("#ByN").hide();
+                    $("#ByN").delay(1000);
+                    $("#ByN").slideDown("slow");
+                });
+                $("#ByN").css({
+                    "background-color": "#808080", "border-color": "#808080", "color": "white",
+                    "padding": "15px 32px", "text-align": "center", "text-decoration": "none", "display": "inline",
+                    "font-size": "20px", "font-family": "Verdana, Geneva, sans-serif", "margin": "20px 0px 40px 10px",
+                    "cursor": "pointer", "border-radius": "10px"
+                });
+                $(document).ready(function () {
+                    $("#Cubos").hide();
+                    $("#Cubos").delay(1500);
+                    $("#Cubos").slideDown("slow");
+                });
+                $("#Cubos").css({
+                    "background-color": "#808080", "border-color": "#808080", "color": "white",
+                    "padding": "15px 32px", "text-align": "center", "text-decoration": "none", "display": "inline",
+                    "font-size": "20px", "font-family": "Verdana, Geneva, sans-serif", "margin": "20px 0px 40px 10px",
+                    "cursor": "pointer", "border-radius": "10px"
+                });
+                $(document).ready(function () {
+                    $("#ploplo").hide();
+                    $("#ploplo").delay(2000);
+                    $("#ploplo").slideDown("slow");
+                });
+                $("#ploplo").css({
+                    "background-color": "#808080", "border-color": "#808080", "color": "white",
+                    "padding": "15px 32px", "text-align": "center", "text-decoration": "none", "display": "inline",
+                    "font-size": "20px", "font-family": "Verdana, Geneva, sans-serif", "margin": "20px 0px 40px 10px",
+                    "cursor": "pointer", "border-radius": "10px"});
+                });
+            //CUBOS
+            $("#Cubos").click(function () {
+                $("body").css({ "background-image": "url('yellow-white-3d-cubes-blue-1920x1080-c3-48d1cc-fffff0-ffdab9-l-91-a-180-f-11.png')", "background-attachment": "fixed" });
+                $(document).ready(function () {
+                    $("#plipli").hide();
+                });
+                $("h1").css({
+                    "font-size": "70px", "color": "navy", "font-family": "Palatino Linotype, Book Antiqua, Palatino, serif",
+                    "margin": "40px 70px 50px 50px","border-style": "solid","border-width": "7px","color": "navy",
+                    "padding": "5px 300px 5px 30px", "border-radius": "30px"});
+                $("#panel").css({
+                    "background-color": "#fff6e5", "padding": "40px", "text-align": "center",
+                    "border": "solid 7px navy", "display": "none", "border-radius": "20px"});
+                $(document).ready(function () {
+                    $("#panel").slideToggle(1000);
+                });
+                    $(document).ready(function () {
+                        $("#ByN").hide();
+                        $("#ByN").delay(1000);
+                        $("#ByN").slideDown("slow");
+                    });
+                    $("#ByN").css({
+                        "background-color": "navy", "border-color": "navy", "color": "white",
+                        "padding": "15px 32px", "text-align": "center", "text-decoration": "none", "display": "block",
+                        "font-size": "20px", "font-family": "Verdana, Geneva, sans-serif", "margin": "40px 40px 30px 40px",
+                        "cursor": "pointer", "border-radius": "10px"
+                    });
+                    $(document).ready(function () {
+                        $("#Cubos").hide();
+                        $("#Cubos").delay(1500);
+                        $("#Cubos").slideDown("slow");
+                    });
+                    $("#Cubos").css({
+                        "background-color": "navy", "border-color": "navy", "color": "white",
+                        "padding": "15px 32px", "text-align": "center", "text-decoration": "none", "display": "block",
+                        "font-size": "20px", "font-family": "Verdana, Geneva, sans-serif", "margin": "40px 40px 30px 40px",
+                        "cursor": "pointer", "border-radius": "10px"
+                    });
+                    $(document).ready(function () {
+                        $("#ploplo").hide();
+                        $("#ploplo").delay(2000);
+                        $("#ploplo").slideDown("slow");
+                    });
+                    $("#ploplo").css({
+                        "background-color": "navy", "border-color": "navy", "color": "white",
+                        "padding": "15px 32px", "text-align": "center", "text-decoration": "none", "display": "block",
+                        "font-size": "20px", "font-family": "Verdana, Geneva, sans-serif", "margin": "40px 40px 30px 40px",
+                        "cursor": "pointer", "border-radius": "10px"
+                    });
+            });//sin estilo
+            $("#ploplo").click(function () {
+                    location.reload();
+            });
+        });
+        function testfunc(){
+            $.post("Servlet1",
+            {
+                colorenviado:document.getElementById('set1').value
+            },
+            function(data){
+                if(data!="error" || data!="not a hex number"){
+                    if(data=="ffffff"){
+                        $("#pff").css({"background":"#"+data,"color":"black","font-size":"30px","border":"2px solid black","border-radius":"10px"});
+                        document.getElementById('pff').innerHTML = "#"+data;}
+                    else{
+                        $("#pff").css({"background":"#"+data,"color":"white","font-size":"30px","border":"2px solid black","border-radius":"10px"});
+                        document.getElementById('pff').innerHTML = "#"+data;}
+                    }
+                });
+            }
+    </script>
+
+</head>
+
+
+<body>
+    <h1 id="panel">BORKER</h1>
+        <button id="ByN">Estilo 1</button>
+        <button id="Cubos">Estilo 2</button>
+        <button id="ploplo">Estilo 3</button>
+    <div id="plipli">
+        <h2>Ingrese el color en Hexadecimal</h2>
+        <input id="set1" type="text" onchange="testfunc()"/>
+        <br/><br/><br/>
+        <div id="pff" style="width:200px;height:200px;"></div>
+    </div>
+</body>
+</html>
